@@ -1,6 +1,6 @@
 const links = [
   { 'name': 'Mail', 'href': 'mailto:rudolph-max@gmx.net', 'target': '' },
-  { 'name': 'GitHub', 'href': 'https://github.com/blumelume', 'target': '_blank' }
+  { 'name': 'GitHub', 'href': 'https://github.com/rudolphmax', 'target': '_blank' }
 ]
 
 function App() {
