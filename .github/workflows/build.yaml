@@ -23,7 +23,6 @@ jobs:
         if: ${{ success() }}
         uses: EndBug/add-and-commit@v9
         with:
-          remove: "./dist"
           add: "./dist --force"
           pull: "--rebase --autostash ."
           push: "origin deploy --force"
