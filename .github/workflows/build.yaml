@@ -14,7 +14,7 @@ jobs:
           ref: 'deploy'
       - uses: morbalint/git-merge-action@v1
         with:
-          target: 'dev'
+          target: 'deploy'
           source: 'main'
           strategy_options: 'ours'
 
