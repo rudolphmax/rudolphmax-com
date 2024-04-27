@@ -4,6 +4,8 @@ const links = [
 ]
 
 function App() {
+  const pgpKey = import.meta.env.VITE_PGP_KEY
+
   return (
     <div className='w-full h-full flex justify-center items-center'>
       <div
@@ -24,11 +26,20 @@ function App() {
           {links.map(({name, href, target}, i) => {
             return (
               <>
-                <a className='font-semibold' href={href} target={target}>{name}</a>
-                <span hidden={i >= links.length-1}>/</span>
+                <a key={i} className='font-semibold' href={href} target={target}>{name}</a>
+                { i < links.length-1 && <span>/</span>}
               </>
             )
           })}
+
+          { pgpKey && (
+            <>
+              <span>/</span>
+              <button title={pgpKey} onClick={() => navigator.clipboard.writeText(pgpKey)}>
+                pgp key
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
