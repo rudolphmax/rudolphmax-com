@@ -11,12 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 'deploy'
-      - uses: morbalint/git-merge-action@v1
-        with:
-          target: 'deploy'
-          source: 'main'
-          strategy_options: 'ours'
+          ref: 'main'
 
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -26,6 +21,10 @@ jobs:
         run: npx yarn install
       - name: Build
         run: npx yarn build
+
+      - uses: actions/checkout@v4
+        with:
+          ref: 'deploy'
 
       - name: Commit changes
         if: ${{ success() }}
