@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  VITE_PGP_KEY: ${{ vars.VITE_PGP_KEY }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
