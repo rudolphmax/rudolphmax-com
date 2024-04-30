@@ -23,7 +23,7 @@ jobs:
       - name: Yarn install
         run: npx yarn install
       - name: Build
-        run: npx yarn build
+        run: VITE_PGP_KEY=${{ vars.VITE_PGP_KEY }} npx yarn build
 
       - uses: actions/checkout@v4
         with:
